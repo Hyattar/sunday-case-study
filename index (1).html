@@ -1,0 +1,739 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="sunday Marketing & Growth Intern case study by Hussein Yattar">
+<title>sunday Growth Case Study</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: long-form report, sticky contents rail on the left (desktop), single column on phones.
+   Motif: the restaurant bill. Mono "ticket" labels for timestamps and figures, highlighter yellow for key numbers. */
+:root{
+  --paper:#f7f8f6;
+  --surface:#ffffff;
+  --ink:#152026;
+  --ink-2:#4a5a62;
+  --ink-3:#7b8a91;
+  --line:#dde3e1;
+  --accent:#0d6b57;
+  --accent-soft:#e2f1ec;
+  --mark:#f6dc5c;
+  --mark-ink:#152026;
+  --warn:#9a5b00;
+  --warn-soft:#fbf0dc;
+  --bar:#b9c6c3;
+  --f-display:"Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --f-body:"Figtree", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --f-article:"Newsreader", Georgia, "Times New Roman", serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --s1:.25rem;--s2:.5rem;--s3:.75rem;--s4:1rem;--s5:1.5rem;--s6:2rem;--s7:3rem;--s8:4.5rem;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#0f1719;--surface:#172226;--ink:#e6eeec;--ink-2:#a9bab8;--ink-3:#7f918f;--line:#2a3a3e;
+  --accent:#4fc7a6;--accent-soft:#16332d;--mark:#e9cf4f;--mark-ink:#10181a;--warn:#f0b35c;--warn-soft:#33281a;--bar:#3f5155;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0f1719;--surface:#172226;--ink:#e6eeec;--ink-2:#a9bab8;--ink-3:#7f918f;--line:#2a3a3e;
+  --accent:#4fc7a6;--accent-soft:#16332d;--mark:#e9cf4f;--mark-ink:#10181a;--warn:#f0b35c;--warn-soft:#33281a;--bar:#3f5155;color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:1rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:clamp(16px,4vw,40px);padding-block:var(--s6) var(--s8)}
+
+/* Header */
+.masthead{display:grid;gap:var(--s4);padding-block:var(--s6) var(--s7);border-bottom:1px solid var(--line);margin-bottom:var(--s7)}
+.eyebrow{font-family:var(--f-mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+h1{font-family:var(--f-display);font-weight:800;font-size:clamp(2.2rem,5.5vw,4rem);line-height:1.02;letter-spacing:-.02em;margin:0;text-wrap:balance;max-width:16ch}
+h1 .brand{color:var(--accent)}
+.byline{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s5);color:var(--ink-2);font-size:.95rem}
+.byline b{color:var(--ink);font-weight:600}
+
+.layout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:var(--s7);align-items:start}
+@media (max-width:900px){.layout{grid-template-columns:minmax(0,1fr);gap:var(--s5)}}
+.toc{position:sticky;top:calc(env(safe-area-inset-top,0px) + 24px);font-size:.9rem}
+@media (max-width:900px){.toc{position:static;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:var(--s4)}}
+.toc p{margin:0 0 var(--s2)}
+.toc ol{list-style:none;margin:0 0 var(--s4);padding:0;display:grid;gap:2px}
+.toc a{color:var(--ink-2);text-decoration:none;display:block;padding:3px 0}
+.toc a:hover{color:var(--accent)}
+.toc .grp{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-top:var(--s3)}
+
+main{min-width:0}
+section{margin-bottom:var(--s8);scroll-margin-top:24px}
+.part-label{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 var(--s2)}
+h2{font-family:var(--f-display);font-weight:700;font-size:clamp(1.6rem,3.4vw,2.3rem);line-height:1.1;letter-spacing:-.015em;margin:0 0 var(--s4);text-wrap:balance}
+h3{font-family:var(--f-display);font-weight:700;font-size:1.3rem;line-height:1.2;margin:var(--s6) 0 var(--s3);text-wrap:balance}
+h4{font-family:var(--f-body);font-weight:700;font-size:1rem;margin:var(--s5) 0 var(--s2)}
+p{margin:0 0 var(--s4);max-width:68ch}
+.lede{font-size:1.12rem;color:var(--ink-2);max-width:62ch}
+ul,ol{max-width:68ch;padding-left:1.2rem;margin:0 0 var(--s4)}
+li{margin-bottom:var(--s2)}
+li::marker{color:var(--ink-3)}
+.hl{background:linear-gradient(transparent 55%,var(--mark) 55%);color:inherit;padding:0 2px}
+.num{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+
+/* Callouts */
+.note{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:var(--s4) var(--s5);margin:0 0 var(--s5);max-width:72ch}
+.note p:last-child,.note ul:last-child{margin-bottom:0}
+.note .eyebrow{display:block;margin-bottom:var(--s2)}
+.assume{background:var(--warn-soft);border-color:transparent}
+.assume .eyebrow{color:var(--warn)}
+.tldr{background:var(--accent-soft);border-color:transparent;max-width:none}
+.tldr .eyebrow{color:var(--accent)}
+.tldr ul{max-width:none}
+
+/* Quotes */
+.video-block{margin-bottom:var(--s7)}
+.video-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:var(--s2) var(--s4);border-bottom:2px solid var(--ink);padding-bottom:var(--s2);margin-bottom:var(--s4)}
+.video-head h3{margin:0}
+.video-head .meta{font-family:var(--f-mono);font-size:.78rem;color:var(--ink-3)}
+.quotes{list-style:none;padding:0;margin:0;max-width:none;display:grid;gap:var(--s3)}
+.q{display:grid;grid-template-columns:2.2rem minmax(0,1fr);gap:var(--s3);background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:var(--s4);margin:0}
+.q .rank{font-family:var(--f-display);font-weight:800;font-size:1.5rem;line-height:1;color:var(--accent)}
+.q blockquote{margin:0 0 var(--s2);font-family:var(--f-article);font-size:1.12rem;line-height:1.45}
+.q .who{display:flex;flex-wrap:wrap;gap:var(--s1) var(--s3);font-size:.85rem;color:var(--ink-2);align-items:center}
+.tag{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.04em;text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:1px 8px;color:var(--ink-2);white-space:nowrap}
+.tag.use{border-color:var(--accent);color:var(--accent)}
+.ts{font-family:var(--f-mono);font-size:.75rem;color:var(--ink-3)}
+
+/* Article */
+.article{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:clamp(20px,5vw,56px);margin-block:var(--s5)}
+.article .kicker{font-family:var(--f-mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:var(--s3)}
+.article h3.a-title{font-family:var(--f-article);font-weight:600;font-size:clamp(1.6rem,3.6vw,2.3rem);line-height:1.15;margin:0 0 var(--s4);letter-spacing:-.01em;max-width:28ch}
+.article .a-meta{font-size:.85rem;color:var(--ink-3);margin-bottom:var(--s5)}
+.article p,.article li{font-family:var(--f-article);font-size:1.15rem;line-height:1.65}
+.article p{max-width:64ch}
+.article h4{font-family:var(--f-display);font-size:1.25rem;margin:var(--s6) 0 var(--s3)}
+.article blockquote{margin:var(--s5) 0;padding-left:var(--s4);border-left:3px solid var(--accent);font-family:var(--f-article);font-style:italic;font-size:1.2rem;color:var(--ink);max-width:60ch}
+.article blockquote cite{display:block;font-style:normal;font-family:var(--f-body);font-size:.85rem;color:var(--ink-3);margin-top:var(--s2)}
+.figs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:var(--s3);margin:var(--s5) 0;max-width:64ch}
+.fig{border-top:2px solid var(--ink);padding-top:var(--s2)}
+.fig b{display:block;font-family:var(--f-display);font-size:1.7rem;line-height:1.1}
+.fig span{font-size:.85rem;color:var(--ink-2)}
+.cta-box{margin-top:var(--s6);padding:var(--s5);border-radius:var(--r);background:var(--accent-soft)}
+.cta-box p{margin:0 0 var(--s3);font-family:var(--f-body);font-size:1rem}
+.btn{display:inline-block;background:var(--accent);color:var(--surface);font-weight:700;padding:.6rem 1.1rem;border-radius:999px;text-decoration:none;font-family:var(--f-body)}
+
+/* Tables */
+.tbl{overflow-x:auto;margin:0 0 var(--s5);border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.9rem;min-width:640px}
+th,td{text-align:left;padding:.6rem .75rem;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3);font-weight:500;background:var(--paper)}
+tbody tr:last-child td{border-bottom:0}
+td.n,th.n{text-align:right;font-family:var(--f-mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.us td{background:var(--accent-soft)}
+td .best{background:var(--mark);color:var(--mark-ink);padding:0 4px;border-radius:3px}
+
+/* Plan grid */
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--s4);margin-bottom:var(--s5)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:var(--s4) var(--s5);min-width:0}
+.card h4{margin-top:0}
+.card ul{padding-left:1rem;margin-bottom:0}
+.card li{font-size:.95rem}
+
+.timeline{list-style:none;padding:0;margin:0 0 var(--s5);max-width:none;display:grid;gap:0}
+.timeline li{display:grid;grid-template-columns:7.5rem minmax(0,1fr);gap:var(--s4);padding:var(--s3) 0;border-top:1px solid var(--line);margin:0}
+.timeline .when{font-family:var(--f-mono);font-size:.8rem;color:var(--accent);padding-top:2px}
+.timeline b{display:block}
+@media (max-width:520px){.timeline li{grid-template-columns:minmax(0,1fr);gap:var(--s1)}}
+
+/* Ad mockups */
+.concepts{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:var(--s5);margin-bottom:var(--s5)}
+.concept{min-width:0}
+.concept > h4{font-family:var(--f-display);font-size:1.2rem;margin:0 0 var(--s3)}
+.ad{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;max-width:360px;margin-bottom:var(--s4);font-size:.88rem}
+.ad-top{display:flex;align-items:center;gap:var(--s2);padding:var(--s3)}
+.ad-av{width:32px;height:32px;border-radius:50%;background:var(--ink);color:var(--paper);display:grid;place-items:center;font-weight:800;font-family:var(--f-display);font-size:.8rem}
+.ad-top small{display:block;color:var(--ink-3);font-size:.72rem}
+.ad-copy{padding:0 var(--s3) var(--s3)}
+.ad-copy p{margin:0;font-size:.88rem}
+.ad-visual{aspect-ratio:4/5;max-width:100%;position:relative;display:flex;flex-direction:column;justify-content:space-between;padding:var(--s4);color:#f7f8f6;background:#0d3b33}
+.ad-visual.v2{aspect-ratio:1/1;background:#152026}
+.ad-visual .big{font-family:var(--f-display);font-weight:800;font-size:2rem;line-height:1.02;letter-spacing:-.02em}
+.ad-visual .big em{font-style:normal;color:#f6dc5c}
+.ad-visual .small{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;opacity:.85}
+.ad-visual .split{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.ad-visual .split div{background:rgba(255,255,255,.1);border-radius:8px;padding:8px}
+.ad-visual .split b{display:block;font-family:var(--f-display);font-size:1.4rem}
+.play{position:absolute;right:12px;top:12px;font-family:var(--f-mono);font-size:.7rem;background:rgba(0,0,0,.45);padding:2px 8px;border-radius:999px}
+.dots{display:flex;gap:4px;justify-content:center;padding:6px 0 0}
+.dots i{width:6px;height:6px;border-radius:50%;background:var(--line)}
+.dots i:first-child{background:var(--accent)}
+.ad-foot{display:flex;justify-content:space-between;align-items:center;gap:var(--s3);padding:var(--s3);border-top:1px solid var(--line);background:var(--paper)}
+.ad-foot small{display:block;color:var(--ink-3);font-size:.7rem;text-transform:uppercase;letter-spacing:.04em}
+.ad-foot b{display:block;font-size:.88rem;line-height:1.25}
+.ad-cta{background:var(--line);color:var(--ink);font-weight:700;border-radius:6px;padding:6px 10px;white-space:nowrap;font-size:.8rem}
+dl.spec{display:grid;grid-template-columns:8rem minmax(0,1fr);gap:var(--s2) var(--s3);margin:0 0 var(--s4);font-size:.93rem}
+dl.spec dt{font-family:var(--f-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-3);padding-top:3px}
+dl.spec dd{margin:0}
+@media (max-width:420px){dl.spec{grid-template-columns:minmax(0,1fr)}dl.spec dt{padding-top:var(--s2)}}
+
+/* Chart */
+.chart{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:var(--s5);margin-bottom:var(--s5)}
+.chart h4{margin:0 0 var(--s1)}
+.chart .sub{font-size:.85rem;color:var(--ink-3);margin:0 0 var(--s4)}
+.bars{display:grid;gap:10px}
+.bar-row{display:grid;grid-template-columns:7.5rem minmax(0,1fr);gap:var(--s3);align-items:center;font-size:.88rem}
+.bar-row .lbl{color:var(--ink-2)}
+.bar-track{position:relative;height:22px}
+.bar{height:100%;background:var(--bar);border-radius:0 4px 4px 0;min-width:4px;position:relative;cursor:default}
+.bar.good{background:var(--accent)}
+.bar-val{position:absolute;left:calc(100% + 8px);top:50%;transform:translateY(-50%);font-family:var(--f-mono);font-size:.8rem;color:var(--ink);white-space:nowrap}
+.bar-row.gap{margin-top:var(--s3)}
+.tip{position:fixed;pointer-events:none;background:var(--ink);color:var(--paper);font-size:.8rem;padding:6px 10px;border-radius:6px;z-index:10;max-width:260px}
+
+.reco{display:grid;grid-template-columns:2.5rem minmax(0,1fr);gap:var(--s3);padding:var(--s5) 0;border-top:1px solid var(--line)}
+.reco .rank{font-family:var(--f-display);font-weight:800;font-size:2rem;line-height:1;color:var(--accent)}
+.reco h4{margin:0 0 var(--s3);font-family:var(--f-display);font-size:1.2rem}
+.reco dl.spec{grid-template-columns:6.5rem minmax(0,1fr)}
+
+.obs{counter-reset:o;list-style:none;padding:0;max-width:none}
+.obs li{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:var(--s4) var(--s5);margin-bottom:var(--s3)}
+.obs li b.t{display:block;font-family:var(--f-display);font-size:1.1rem;margin-bottom:var(--s2)}
+.obs li p{margin-bottom:var(--s2)}
+.obs li p:last-child{margin-bottom:0}
+.badge{display:inline-block;font-family:var(--f-mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;padding:1px 8px;border-radius:999px;margin-right:6px;vertical-align:2px}
+.b-work{background:var(--accent-soft);color:var(--accent)}
+.b-fail{background:var(--warn-soft);color:var(--warn)}
+.b-surp{background:var(--mark);color:var(--mark-ink)}
+
+.sources{font-size:.85rem;color:var(--ink-2)}
+.sources li{margin-bottom:var(--s1)}
+footer{border-top:1px solid var(--line);padding-top:var(--s5);color:var(--ink-3);font-size:.85rem}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="masthead">
+    <span class="eyebrow">Case study · Marketing &amp; Growth Intern</span>
+    <h1>Selling <span class="brand">sunday</span> with its clients' own words</h1>
+    <p class="lede">Customer video mining, a French customer story, a launch plan for the videos, a UK Meta campaign and a read of six weeks of paid data.</p>
+    <div class="byline">
+      <span>By <b>Hussein Yattar</b></span>
+      <span>Portfolio: <a href="https://hyattar.github.io" target="_blank" rel="noopener">hyattar.github.io</a></span>
+      <span>September 2026</span>
+    </div>
+  </header>
+
+  <div class="layout">
+    <nav class="toc" aria-label="Contents">
+      <p class="grp">Overview</p>
+      <ol><li><a href="#summary">Key takeaways</a></li></ol>
+      <p class="grp">Part 1 · Creativity</p>
+      <ol>
+        <li><a href="#quotes">1.1 Best quotes</a></li>
+        <li><a href="#article">1.2 Blog article (FR)</a></li>
+        <li><a href="#plan">1.3 Communication plan</a></li>
+      </ol>
+      <p class="grp">Part 2 · Growth</p>
+      <ol>
+        <li><a href="#benchmark">T1 · UK benchmark</a></li>
+        <li><a href="#creatives">T1 · Ad concepts</a></li>
+        <li><a href="#data">T2 · Reading the data</a></li>
+        <li><a href="#recos">T2 · Recommendations</a></li>
+      </ol>
+      <p class="grp">Bonus</p>
+      <ol>
+        <li><a href="#bonus">Measuring awareness</a></li>
+        <li><a href="#sources">Sources</a></li>
+      </ol>
+    </nav>
+
+    <main>
+      <!-- SUMMARY -->
+      <section id="summary">
+        <div class="note tldr">
+          <span class="eyebrow">Key takeaways</span>
+          <ul>
+            <li><b>The videos are a goldmine of hard numbers told by operators:</b> tips from €3-4 to €30-40 per server per day at Kozy, cash-up from 35 to 5-10 minutes, +8% average check at PNY. The plan turns each number into a dedicated asset.</li>
+            <li><b>In the UK, sunday should sell the moment of payment as a growth lever:</b> tips for staff, Google reviews and faster table turns. me&amp;u and OrderPay sell ordering, Dojo sells a card machine. Nobody else owns "the bill".</li>
+            <li><b>Google Search brings a booked meeting for €51 in France and £82 in the UK</b>, against €180-199 and £438-516 on Meta and LinkedIn. It receives 17% of the budget. That is the first thing I would change.</li>
+            <li><b>UK Meta is broken after the click, not before:</b> its CTR is close to France but its click-to-demo rate is 42% lower. Fix the landing page and form before touching budgets.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- PART 1.1 -->
+      <section id="quotes">
+        <p class="part-label">Part 1 · Task 1</p>
+        <h2>The 5 best quotes of each video</h2>
+        <p>I transcribed each video with a speech-to-text model and cross-checked the wording against the burned-in subtitles (PNY) and a second pass on longer audio windows (Kozy). Quotes are lightly cleaned for spoken tics only. I ranked them with one question: <b>would a restaurant owner stop scrolling for this line?</b> A concrete number or a lived pain beats a generic compliment.</p>
+        <div class="note assume">
+          <span class="eyebrow">Note on speakers</span>
+          <p>PNY videos show names on screen. The Kozy cut has no lower-thirds, so I labelled speakers by role (the founder introduces himself as "chef d'entreprise"). Names should be added from the shoot brief before publication.</p>
+        </div>
+
+        <div class="video-block">
+          <div class="video-head"><h3>PNY · « Pourquoi PNY adore sunday »</h3><span class="meta">2:13 · 3 speakers</span></div>
+          <ol class="quotes">
+            <li class="q"><span class="rank">1</span><div>
+              <blockquote>« Qui n'a pas rêvé de finir sa caisse rapidement pour aller voir ses potes boire un coup ? Bah nos équipes ! »</blockquote>
+              <div class="who"><span>Yann Brioulet, Directeur des opérations</span><span class="ts">0:05</span><span class="tag use">Ad hook</span></div></div></li>
+            <li class="q"><span class="rank">2</span><div>
+              <blockquote>« Sur les paniers moyens, on a constaté une augmentation de 8 %. Je pense que c'est lié au fait que les gens peuvent commander et payer beaucoup plus facilement. »</blockquote>
+              <div class="who"><span>Yann Brioulet</span><span class="ts">0:35</span><span class="tag use">Sales deck · ROI</span></div></div></li>
+            <li class="q"><span class="rank">3</span><div>
+              <blockquote>« Avec sunday, on est à 3 % à peu près du montant payé sur les QR codes [en pourboires], ce qui est très très bien. Avant c'était un peu aléatoire, avec une boîte posée sur le bar. »</blockquote>
+              <div class="who"><span>Samy Lokki, Directeur PNY Paris 12</span><span class="ts">0:44</span><span class="tag use">Staff angle</span></div></div></li>
+            <li class="q"><span class="rank">4</span><div>
+              <blockquote>« Sur les avis Google, on a quand même ressenti un changement radical. […] Quand t'es dans un bon mood, bah tu laisses des pluies d'étoiles et des commentaires plutôt sympas. »</blockquote>
+              <div class="who"><span>Yann Brioulet</span><span class="ts">0:56</span><span class="tag use">Reviews feature</span></div></div></li>
+            <li class="q"><span class="rank">5</span><div>
+              <blockquote>« Si tu veux un système qui simplifie la vie, qui t'aide à la gestion des équipes et qui s'intègre au mieux à ton logiciel de caisse : va chez sunday ! »</blockquote>
+              <div class="who"><span>Léo Lacoume, Responsable administratif et financier</span><span class="ts">2:03</span><span class="tag use">End card · CTA</span></div></div></li>
+          </ol>
+        </div>
+
+        <div class="video-block">
+          <div class="video-head"><h3>PNY · « Comment sunday facilite la gestion financière »</h3><span class="meta">1:52 · finance persona</span></div>
+          <ol class="quotes">
+            <li class="q"><span class="rank">1</span><div>
+              <blockquote>« Dans mon quotidien, ça a changé la facilité des clôtures de caisse et des rapprochements entre la caisse et les encaissements : c'est beaucoup plus simple et beaucoup moins chronophage. »</blockquote>
+              <div class="who"><span>Léo Lacoume, Responsable administratif et financier</span><span class="ts">0:02</span><span class="tag use">CFO outreach</span></div></div></li>
+            <li class="q"><span class="rank">2</span><div>
+              <blockquote>« Plus besoin de tirer un RAZ de 4 km, tout est regroupé. […] Franchement, il y a un bon 10 minutes d'économisé. »</blockquote>
+              <div class="who"><span>Samy Lokki, Directeur PNY Paris 12</span><span class="ts">1:26</span><span class="tag use">Ad hook</span></div></div></li>
+            <li class="q"><span class="rank">3</span><div>
+              <blockquote>« Ça permet d'éviter les pertes de données avec des tickets, des feuilles, des factures papier. On a les données en temps réel sur le back-office. »</blockquote>
+              <div class="who"><span>Léo Lacoume</span><span class="ts">0:35</span><span class="tag use">Landing page</span></div></div></li>
+            <li class="q"><span class="rank">4</span><div>
+              <blockquote>« Ça permet de piloter, de voir quand il y a des erreurs et de les détecter directement. »</blockquote>
+              <div class="who"><span>Léo Lacoume</span><span class="ts">0:45</span><span class="tag use">Sales deck · control</span></div></div></li>
+            <li class="q"><span class="rank">5</span><div>
+              <blockquote>« On a un dashboard personnalisé pour nos 14 restaurants : on peut naviguer d'un restaurant à l'autre et modifier les menus du click &amp; collect très rapidement. »</blockquote>
+              <div class="who"><span>Léo Lacoume</span><span class="ts">0:52</span><span class="tag use">Multi-site groups</span></div></div></li>
+          </ol>
+        </div>
+
+        <div class="video-block">
+          <div class="video-head"><h3>PNY · « Comment sunday facilite la vie du staff »</h3><span class="meta">1:58 · floor staff persona</span></div>
+          <ol class="quotes">
+            <li class="q"><span class="rank">1</span><div>
+              <blockquote>« Quand les clients splittent et prennent chacun leur article, ça évite qu'ils viennent en caisse à 6 ou 7 où chacun veut régler une frite, une sauce, une boisson. »</blockquote>
+              <div class="who"><span>Samy Lokki, Directeur PNY Paris 12</span><span class="ts">0:45</span><span class="tag use">Ad hook · split bill</span></div></div></li>
+            <li class="q"><span class="rank">2</span><div>
+              <blockquote>« Mon staff est super content : ça facilite et ça fluidifie le service. »</blockquote>
+              <div class="who"><span>Samy Lokki</span><span class="ts">0:02</span><span class="tag use">Quote card</span></div></div></li>
+            <li class="q"><span class="rank">3</span><div>
+              <blockquote>« Ce n'est pas un client qui va se présenter au bar alors que le barman est en train de faire des boissons. »</blockquote>
+              <div class="who"><span>Samy Lokki</span><span class="ts">0:41</span><span class="tag use">Ops pain</span></div></div></li>
+            <li class="q"><span class="rank">4</span><div>
+              <blockquote>« Il y a un petit côté ludique aussi pour les clients : une fois qu'ils ont scanné le QR code, ils peuvent choisir chacun ce qu'ils ont mangé, régler séparément, partager les frais, ajouter le pourboire s'ils veulent. »</blockquote>
+              <div class="who"><span>Samy Lokki</span><span class="ts">0:20</span><span class="tag use">Product demo voice-over</span></div></div></li>
+            <li class="q"><span class="rank">5</span><div>
+              <blockquote>« Ils sont toujours disponibles. Moi perso, la dernière fois, j'ai appelé Nicolas pour régler un petit problème sur un TPE : ça m'a pris deux minutes. »</blockquote>
+              <div class="who"><span>Samy Lokki</span><span class="ts">1:43</span><span class="tag use">Objection handling · support</span></div></div></li>
+          </ol>
+        </div>
+
+        <div class="video-block">
+          <div class="video-head"><h3>Kozy · brunch group interview</h3><span class="meta">9:23 · 3 speakers</span></div>
+          <ol class="quotes">
+            <li class="q"><span class="rank">1</span><div>
+              <blockquote>« En 2019-2020, sunday n'existait pas encore : on faisait 3-4 euros par jour par collaborateur. Aujourd'hui, sur certaines boutiques, on peut faire 30-40 euros. C'est colossal. »</blockquote>
+              <div class="who"><span>Manager, Kozy</span><span class="ts">3:38</span><span class="tag use">Hero stat · all channels</span></div></div></li>
+            <li class="q"><span class="rank">2</span><div>
+              <blockquote>« Des caisses, j'ai pu mettre facilement 30-35 minutes à les faire dans des entreprises qui n'étaient pas sous sunday. Ici, c'est 10 minutes quand je prends mon temps et 5 minutes quand j'ai envie de rentrer chez moi. »</blockquote>
+              <div class="who"><span>Manager de salon, Kozy</span><span class="ts">5:10</span><span class="tag use">Ad hook · cash-up</span></div></div></li>
+            <li class="q"><span class="rank">3</span><div>
+              <blockquote>« Ce que ça a changé, c'est surtout le plaisir de voir que nos collabs gagnent de super pourboires et qu'ils sont probablement mieux rémunérés que dans beaucoup d'autres endroits ouverts qu'en journée. »</blockquote>
+              <div class="who"><span>Fondateur, Kozy</span><span class="ts">8:11</span><span class="tag use">Employer brand · retention</span></div></div></li>
+            <li class="q"><span class="rank">4</span><div>
+              <blockquote>« Sur les QR codes, on doit avoir près de 50 % des clients qui laissent un pourboire, ce qui est énorme. »</blockquote>
+              <div class="who"><span>Fondateur, Kozy</span><span class="ts">3:06</span><span class="tag use">Tips feature</span></div></div></li>
+            <li class="q"><span class="rank">5</span><div>
+              <blockquote>« Nos avis sont beaucoup plus élevés que si on venait les demander nous-mêmes. »</blockquote>
+              <div class="who"><span>Manager de salon, Kozy</span><span class="ts">5:03</span><span class="tag use">Reviews feature</span></div></div></li>
+          </ol>
+          <p style="margin-top:var(--s4);font-size:.93rem;color:var(--ink-2)"><b>Runner-up</b> kept for UK ads: « Quand on attend sa note pendant 10 ou 15 minutes, ça peut être frustrant. » (Fondateur, 1:34). It names the guest pain in one line and translates well.</p>
+        </div>
+      </section>
+
+      <!-- PART 1.2 -->
+      <section id="article">
+        <p class="part-label">Part 1 · Task 2</p>
+        <h2>Blog article from the Kozy video</h2>
+        <p>The article follows the format of sunday's existing customer stories (for example the Café A story): a client quote as the title, short benefit-led subheads, the client's own words as proof, a "En résumé" wrap-up and a demo CTA. "sunday" stays lowercase and readers are addressed with "vous".</p>
+
+        <div class="note">
+          <span class="eyebrow">How I used and challenged the AI</span>
+          <ul>
+            <li><b>Fed it the full transcript, not a summary</b>, and asked it to use only figures that appear in it. The first draft still invented a "+20% de chiffre d'affaires": removed.</li>
+            <li><b>Gave it a real sunday customer story as the template</b> (title as a quote, benefit subheads, "En résumé", CTA). The first draft was a generic listicle titled "5 raisons de choisir sunday".</li>
+            <li><b>Replaced hype with the client's voice.</b> Words like "révolutionnaire" or "game-changer" were cut. Every claim is now a quote or a paraphrase with a timestamp I checked by hand.</li>
+            <li><b>Kept the client's hedges.</b> "Je pense", "près de 50 %", "sur certaines boutiques" stay in. Overstating a client's numbers is a legal and trust risk for a customer story.</li>
+          </ul>
+        </div>
+
+        <article class="article" lang="fr">
+          <div class="kicker">Témoignage client · Brunch</div>
+          <h3 class="a-title">Kozy : « Aujourd'hui, nos collaborateurs peuvent faire 30 à 40 euros de pourboire par jour »</h3>
+          <div class="a-meta">5 salons à Paris · jusqu'à 600 couverts par jour et par établissement · TPE et QR codes sunday</div>
+
+          <p>Café de spécialité, brunch servi toute la journée, salles pleines dès le samedi matin : Kozy est une chaîne parisienne en plein développement. Avec cinq salons de brunch à Paris, chaque établissement peut accueillir jusqu'à 600 couverts par jour. À ce rythme, chaque minute passée à apporter une carte ou à attendre un terminal de paiement se paie en tables qui ne tournent pas.</p>
+          <p>Kozy utilise les terminaux de paiement sunday ainsi que les QR codes, qui donnent accès au menu et permettent aux clients de régler directement depuis leur téléphone. Le fondateur et deux managers nous racontent ce qui a changé.</p>
+
+          <div class="figs">
+            <div class="fig"><b class="num">×10</b><span>pourboires par collaborateur et par jour, sur certaines boutiques</span></div>
+            <div class="fig"><b class="num">~50 %</b><span>des clients qui paient par QR code laissent un pourboire</span></div>
+            <div class="fig"><b class="num">5 à 10 min</b><span>pour une clôture de caisse, contre 30 à 35 min ailleurs</span></div>
+          </div>
+
+          <h4>Des tables qui tournent plus vite, sans courir après les cartes</h4>
+          <p>Le week-end, chaque salon Kozy sert entre 300 et 400 couverts par jour, sans service du soir. La rotation des tables est donc le nerf de la guerre.</p>
+          <blockquote>« Avant, on devait amener une carte de plats, une carte de desserts, une carte de boissons. Là, le client scanne : il a tout dessus. »<cite>Manager, Kozy</cite></blockquote>
+          <p>Le client s'installe, scanne le QR code et consulte le menu immédiatement. Les équipes font moins d'allers-retours et peuvent accueillir plus de monde.</p>
+
+          <h4>Des clients qui paient quand ils le décident</h4>
+          <p>La clientèle de Kozy est plutôt jeune. Elle arrive téléphone en main et adopte le parcours sans explication. Surtout, elle n'attend plus l'addition.</p>
+          <blockquote>« On n'a pas besoin d'attendre que le serveur soit disponible, nous voie, nous apporte l'addition puis revienne avec un TPE. Quand on attend sa note pendant 10 ou 15 minutes, ça peut être frustrant. »<cite>Fondateur, Kozy</cite></blockquote>
+          <p>Le repas se termine sur une note positive, sans cette frustration de fin de service.</p>
+
+          <h4>Un panier moyen porté par les photos</h4>
+          <p>Sur le menu digital, chaque plat est accompagné de sa photo. Plus besoin de regarder l'assiette des voisins pour se décider.</p>
+          <blockquote>« Ils ont direct un exemple de ce qu'est le plat, donc ça parle beaucoup plus. Ça pousse à la consommation, notamment pour les extras. »<cite>Manager, Kozy</cite></blockquote>
+
+          <h4>Des pourboires multipliés par dix</h4>
+          <p>En France, laisser un pourboire par carte n'est pas un réflexe. Avec sunday, la question est posée simplement au moment du paiement : le client peut refuser, accepter ou choisir son montant.</p>
+          <blockquote>« Sur les QR codes, on doit avoir près de 50 % des clients qui laissent un pourboire, ce qui est énorme. Et beaucoup en laissent aussi sur les TPE sunday, alors que normalement personne ne laisse de pourboire sur un TPE. »<cite>Fondateur, Kozy</cite></blockquote>
+          <p>L'effet sur les équipes est concret. En 2019-2020, avant sunday, un collaborateur Kozy gagnait 3 à 4 euros de pourboire par jour. Aujourd'hui, sur certaines boutiques, c'est 30 à 40 euros.</p>
+          <blockquote>« Pour moi, en tant que chef d'entreprise, ce que ça a changé, c'est surtout le plaisir de voir que nos collabs gagnent de super pourboires. Ils sont probablement mieux rémunérés que dans beaucoup d'autres endroits ouverts qu'en journée. »<cite>Fondateur, Kozy</cite></blockquote>
+          <p>Des équipes mieux rémunérées sont des équipes plus engagées auprès des clients. C'est aussi un argument de poids pour recruter et fidéliser dans un secteur en tension.</p>
+
+          <h4>Des avis Google qui arrivent tout seuls</h4>
+          <p>Avant sunday, Kozy formait ses équipes à demander des avis Google aux clients. Avec l'affluence du samedi et du dimanche, l'exercice avait ses limites. Désormais, sunday s'en charge : après le paiement par QR code, le client évalue son expérience puis se voit proposer de laisser un avis Google en quelques secondes.</p>
+          <blockquote>« Il y a cinq étoiles à remplir, ça va faciliter le fait de laisser un avis positif. Ça permet aussi de booster notre référencement. Nos avis sont beaucoup plus élevés que si on venait les demander nous-mêmes. »<cite>Manager de salon, Kozy</cite></blockquote>
+          <p>Même sans commentaire, chaque note aide Kozy à s'améliorer. Depuis le dashboard, les managers suivent les évaluations par thème : cuisine, service, lieu.</p>
+
+          <h4>Une clôture de caisse en quelques minutes</h4>
+          <p>Avec des terminaux classiques, il fallait sortir la télécollecte puis reprendre les tickets un par un pour rapprocher les paiements, titres-restaurant compris. Sur le back-office sunday, l'ensemble des revenus du jour, de la semaine ou du mois est centralisé.</p>
+          <blockquote>« Des caisses, j'ai pu mettre facilement 30-35 minutes à les faire dans des entreprises qui n'étaient pas sous sunday. Ici, c'est 10 minutes quand je prends mon temps et 5 minutes quand j'ai envie de rentrer chez moi. »<cite>Manager de salon, Kozy</cite></blockquote>
+          <p>Côté direction, le suivi des remises en banque (espèces, cartes, TPE) se fait depuis le même dashboard. Les vieux fichiers Excel ne sont quasiment plus utilisés.</p>
+
+          <h4>Une solution qui s'intègre à l'existant</h4>
+          <p>Avant de choisir une solution, Kozy vérifie qu'elle s'intègre à ses outils. sunday est connecté à sa caisse Zelty ainsi qu'à Pongo, le programme de fidélité que l'enseigne met en place.</p>
+
+          <h4>En résumé</h4>
+          <ul>
+            <li>Une rotation des tables plus rapide, avec un menu et un paiement accessibles dès le scan</li>
+            <li>Un panier moyen soutenu par les photos des plats et des extras</li>
+            <li>Des pourboires passés de 3-4 € à 30-40 € par jour et par collaborateur sur certaines boutiques</li>
+            <li>Des avis Google collectés automatiquement à la fin du paiement</li>
+            <li>Une clôture de caisse ramenée de 30-35 minutes à 5-10 minutes</li>
+          </ul>
+          <blockquote>« Je recommanderais fortement sunday à un restaurateur qui a beaucoup de volume de clients, parce que ça va vraiment lui faciliter la vie et la vie de ses équipes. »<cite>Fondateur, Kozy</cite></blockquote>
+
+          <div class="cta-box">
+            <p><b>Vous aussi, transformez chaque table en revenu supplémentaire.</b> Découvrez comment sunday peut s'adapter à votre établissement.</p>
+            <a class="btn" href="https://sundayapp.com/fr/" target="_blank" rel="noopener">Demander une démo</a>
+          </div>
+        </article>
+      </section>
+
+      <!-- PART 1.3 -->
+      <section id="plan">
+        <p class="part-label">Part 1 · Task 3</p>
+        <h2>Communication plan for the videos</h2>
+        <p class="lede">Four videos are one shoot. The plan turns them into about 40 assets, each built around one number and one persona, and pushes them through owned, earned, paid and sales channels over six weeks.</p>
+
+        <h3>Principles</h3>
+        <ul>
+          <li><b>One number per asset.</b> "+8% panier moyen", "×10 pourboires", "35 → 5 min de caisse". Operators remember numbers told by peers, not features.</li>
+          <li><b>One persona per cut.</b> Owner or ops director (revenue, rotation), finance (cash-up, reconciliation), floor staff and managers (tips, fewer runs to the till).</li>
+          <li><b>Peer voice first, brand second.</b> The clients' accounts and faces carry more trust than sunday's page. Co-publishing is the priority.</li>
+          <li><b>Every asset points to a demo path</b>, with UTM tagging so each video's pipeline can be tracked.</li>
+        </ul>
+
+        <h3>The asset kit (one shoot, ~40 pieces)</h3>
+        <div class="grid2">
+          <div class="card"><h4>Video cuts</h4><ul>
+            <li>4 master films (16:9) for YouTube and the website</li>
+            <li>12 vertical shorts of 15-30 s, one per number or pain</li>
+            <li>6 bumpers of 6 s for YouTube and Meta retargeting</li>
+            <li>English subtitled versions of the 6 best shorts for the UK</li>
+          </ul></div>
+          <div class="card"><h4>Static and written</h4><ul>
+            <li>20 quote cards (the quotes above) in 1:1 and 4:5</li>
+            <li>Kozy blog article, plus a PNY article on multi-site finance</li>
+            <li>2 one-page case studies (PDF) for sales</li>
+            <li>A LinkedIn carousel "Kozy en 6 chiffres"</li>
+          </ul></div>
+          <div class="card"><h4>Sales enablement</h4><ul>
+            <li>A "Voice of the client" slide per persona in the sales deck</li>
+            <li>Video snippets for Lemlist or HubSpot sequences (GIF thumbnail)</li>
+            <li>Objection library: "support?" → Nicolas in 2 minutes, "tips in France?" → 50% at Kozy</li>
+            <li>Email signature banner with the current hero video</li>
+          </ul></div>
+        </div>
+
+        <h3>Channel plan</h3>
+        <div class="tbl"><table>
+          <thead><tr><th>Channel</th><th>What we publish</th><th>Creative idea</th><th>KPI</th></tr></thead>
+          <tbody>
+            <tr><td><b>Website</b></td><td>Customer stories hub, video on the homepage and on product pages (tips, reviews, accounting)</td><td>Each product page gets the client quote that proves it, e.g. the Kozy tips quote on the tips page</td><td>Demo rate on pages with video vs without</td></tr>
+            <tr><td><b>Blog and SEO</b></td><td>Kozy article, PNY finance article, a "clôture de caisse" guide embedding the clips</td><td>Target searches like "clôture de caisse restaurant", "pourboire carte bancaire restaurant"</td><td>Organic sessions, assisted demos</td></tr>
+            <tr><td><b>LinkedIn (company)</b></td><td>1 post per week per video: short, carousel, quote card</td><td>"Le chrono de la caisse": split screen of a 35 min cash-up vs 5 min</td><td>Engagement rate, follower growth among restaurant decision makers</td></tr>
+            <tr><td><b>LinkedIn (people)</b></td><td>Posts by sunday sales reps and the founders, and a reshare from Yann Brioulet and Kozy's founder</td><td>Thought Leader Ads to boost the client's own post</td><td>Reach among target job titles, inbound DMs</td></tr>
+            <tr><td><b>Instagram and TikTok</b></td><td>Vertical shorts, staff-facing tone</td><td>"Combien tu fais de pourboires ?" street-style questions to servers, ending on Kozy's 3-4 € → 30-40 €</td><td>3-second views, shares, saves</td></tr>
+            <tr><td><b>YouTube</b></td><td>Full films plus Shorts, playlist "Ils utilisent sunday"</td><td>Chapters by topic so a prospect jumps to "fin de service"</td><td>Watch time, clicks to demo</td></tr>
+            <tr><td><b>Newsletter and CRM</b></td><td>Prospect nurture (3 emails, one persona each), client newsletter</td><td>Email to prospects who churned from a demo: "Kozy had the same doubt about tips in France"</td><td>Click rate, reopened opportunities</td></tr>
+            <tr><td><b>Existing clients</b></td><td>Back-office banner and in-app message</td><td>"Vos pourboires ont augmenté ? Racontez-le" to recruit the next testimonial and referrals</td><td>Referral leads, new testimonial volunteers</td></tr>
+            <tr><td><b>Paid social</b></td><td>Meta and LinkedIn: shorts as cold creatives, full films for retargeting</td><td>Retarget 50% video viewers with the matching one-page case study</td><td>Cost per meeting booked</td></tr>
+            <tr><td><b>Paid search and YouTube</b></td><td>YouTube in-stream on restaurant-owner audiences, bumpers on searchers of competitors' names</td><td>6 s bumper: "35 min → 5 min. La caisse, version sunday."</td><td>View-through rate, branded search lift</td></tr>
+            <tr><td><b>PR and trade press</b></td><td>Pitch the Kozy tips story to Néorestauration, L'Hôtellerie Restauration, Food Service Vision</td><td>Angle: "Comment une chaîne de brunch a multiplié par 10 les pourboires de ses équipes"</td><td>Articles, backlinks, referral traffic</td></tr>
+            <tr><td><b>Partners</b></td><td>Co-marketing with Zelty and Pongo, who appear in the Kozy story</td><td>Joint webinar "Caisse, paiement, fidélité : la stack d'un brunch à 600 couverts"</td><td>Co-sourced leads</td></tr>
+            <tr><td><b>Events and field</b></td><td>Screen the films on the sunday stand (Sirha, Food Hotel Tech, Equip'Hotel)</td><td>An afterwork at a PNY restaurant for prospects: pay with sunday, meet Samy and Yann</td><td>Meetings booked on site</td></tr>
+            <tr><td><b>In venue</b></td><td>Table tents at PNY and Kozy (with their agreement)</td><td>"Vous êtes restaurateur ? Cette addition s'est payée en 30 secondes." with a QR to the video</td><td>Scans, demos from the QR</td></tr>
+          </tbody>
+        </table></div>
+
+        <h3>Six-week rollout</h3>
+        <ol class="timeline">
+          <li><span class="when">Week 0</span><div><b>Prepare</b>Validate quotes and figures with PNY and Kozy, produce cuts and subtitles, brief sales, set UTMs and a "video" source in the CRM.</div></li>
+          <li><span class="when">Week 1</span><div><b>Launch the hero story</b>Kozy article and film on the blog, co-post with Kozy on LinkedIn and Instagram, newsletter feature.</div></li>
+          <li><span class="when">Week 2-3</span><div><b>Persona waves</b>Finance week (PNY finance video, cash-up content), staff week (tips, split bill). Paid social starts on the best organic performers.</div></li>
+          <li><span class="when">Week 4</span><div><b>Earned push</b>Trade press pitch, partner webinar with Zelty and Pongo, sales sequences with video snippets.</div></li>
+          <li><span class="when">Week 5-6</span><div><b>UK adaptation and review</b>English subtitled shorts in the UK tests (Part 2), readout of pipeline per video, pick next testimonial shoot.</div></li>
+        </ol>
+      </section>
+
+      <!-- PART 2 TASK 1 -->
+      <section id="benchmark">
+        <p class="part-label">Part 2 · Task 1 · Paid social UK</p>
+        <h2>UK benchmark: who else is at the table?</h2>
+        <div class="note assume">
+          <span class="eyebrow">Assumptions</span>
+          <ul>
+            <li>Target: UK casual and premium casual operators with table service, from single sites to groups of 20+, mainly London and big cities.</li>
+            <li>Decision makers: owners, ops directors, finance directors. Staff shortages and margins are their top concerns.</li>
+            <li>Competitors picked by overlap on the UK pay-at-table decision: two QR specialists and the card machine incumbent a prospect already uses.</li>
+          </ul>
+        </div>
+        <div class="tbl"><table>
+          <thead><tr><th></th><th>sunday</th><th>me&amp;u</th><th>OrderPay</th><th>Dojo</th></tr></thead>
+          <tbody>
+            <tr><td><b>Core product</b></td><td>Pay at table (QR and terminal), tips, reviews, reconciliation</td><td>Order and pay, CRM, reservations, voice AI</td><td>Order and pay, pay and go, click &amp; collect, terminal</td><td>Card machines, next-day payouts</td></tr>
+            <tr><td><b>Positioning</b></td><td>"Turn every table into more revenue"</td><td>End-to-end guest experience platform</td><td>"Faster, cheaper payments for every venue"</td><td>Fast, simple card payments for SMEs</td></tr>
+            <tr><td><b>Scale</b></td><td>5,000+ restaurants</td><td>6,000+ locations (strongest in Australia)</td><td>3,000+ venues</td><td>100,000+ UK businesses</td></tr>
+            <tr><td><b>UK proof</b></td><td>Dishoom, Caravan, JKS, Din Tai Fung, Kricket, Polpo</td><td>Toca Social, New World Trading Co., Flight Club</td><td>Bills, Tortilla, GBK, Carluccio's, The Wolseley</td><td>Independents and SMEs across sectors</td></tr>
+            <tr><td><b>Best fit</b></td><td>Busy table-service restaurants</td><td>Bars, food halls, competitive socialising</td><td>Pubs, hotels, leisure, chains</td><td>Any venue needing a terminal</td></tr>
+            <tr><td><b>Pricing</b></td><td>Quote-based, per transaction</td><td>Quote-based</td><td>Quote-based</td><td>1.2% blended under £100k/yr, £24.95 minimum/month; split bill and tipping in Plus (£11.99/month)</td></tr>
+            <tr><td><b>Tips and reviews</b></td><td>Claims 3x tips, 5x Google reviews</td><td>Tipping, upsells</td><td>Claims up to 10x tips</td><td>Tipping on terminal only</td></tr>
+            <tr><td><b>Weak spot</b></td><td>Low UK awareness</td><td>Ordering-first, less relevant to classic table service</td><td>Broad venue focus, less restaurant-specific</td><td>No guest journey, no reviews, no data; complaints on pushy sales</td></tr>
+          </tbody>
+        </table></div>
+
+        <h3>The advantage to push: sunday owns the bill</h3>
+        <p>me&amp;u and OrderPay sell ordering. Dojo sells a terminal. <b>sunday is the only one that sells the moment of payment as a growth lever</b>, on the phone and on the terminal alike: more tips for the team, more Google reviews, faster table turns and a cash-up that takes minutes.</p>
+        <p>This lands well in the UK for two reasons:</p>
+        <ul>
+          <li><b>Staff retention is the operator's first problem.</b> Since October 2024, the Employment (Allocation of Tips) Act requires tips to go to staff in full. Tips have become a pay and hiring argument, which is exactly what Kozy's founder says.</li>
+          <li><b>UK proof exists.</b> Dishoom, JKS or Caravan are names every London operator respects. Showing them beats any feature list while awareness is low.</li>
+        </ul>
+        <p>Suggested line for UK ads: <span class="hl">"The bill is the last thing your guests remember. Make it pay."</span></p>
+      </section>
+
+      <section id="creatives">
+        <p class="part-label">Part 2 · Task 1 · Creative strategy</p>
+        <h2>Two ad concepts to test on Meta</h2>
+        <p>The two concepts test one variable: the <b>motivation</b> that makes an operator ask for a demo. Concept A sells people (the team earns more, so they stay). Concept B sells operations and revenue (tables turn faster, the check grows). Same audience, same form, same budget, so the winner tells us which story sales should lead with in the UK.</p>
+
+        <div class="concepts">
+          <div class="concept">
+            <h4>A · "Keep your best servers"</h4>
+            <div class="ad" aria-label="Mockup of ad concept A">
+              <div class="ad-top"><span class="ad-av">s</span><div><b>sunday</b><small>Sponsored</small></div></div>
+              <div class="ad-copy"><p>Hiring is hard. Keeping great servers is harder. Restaurants using sunday see 3x more tips go straight to their team.</p></div>
+              <div class="ad-visual">
+                <span class="play">0:18</span>
+                <span class="small">Server POV · Reels 9:16</span>
+                <div class="split"><div><span class="small">Before</span><b>Tip jar</b><span class="small">cash only</span></div><div><span class="small">With sunday</span><b>3x</b><span class="small">more tips</span></div></div>
+                <span class="big">Your team keeps every tip. <em>Now give them 3x more.</em></span>
+              </div>
+              <div class="ad-foot"><div><small>sundayapp.com</small><b>More tips. Happier team. Lower turnover.</b></div><span class="ad-cta">Book now</span></div>
+            </div>
+            <dl class="spec">
+              <dt>Format</dt><dd>18 s vertical video for Reels and Stories, 4:5 cut for Feed. UGC style, filmed with a server in a UK client venue. English subtitled Kozy short as a variant.</dd>
+              <dt>Visual</dt><dd>Server finishes a shift, checks tips on the sunday staff app, smiles. Split screen "tip jar vs sunday". End card with UK client logos.</dd>
+              <dt>Headline</dt><dd>More tips. Happier team. Lower turnover.</dd>
+              <dt>Description</dt><dd>Guests scan, split, tip and pay in 30 seconds.</dd>
+              <dt>CTA</dt><dd>Book now, opening a Meta instant form (name, venue, number of sites, POS).</dd>
+              <dt>Why it converts</dt><dd>Staff retention is an emotional, daily pain, and the tips law makes it concrete. Faces and a real shift stop the scroll better than product shots. The instant form removes the landing page, which is where UK Meta loses people today.</dd>
+            </dl>
+          </div>
+
+          <div class="concept">
+            <h4>B · "The 12-minute bill"</h4>
+            <div class="ad" aria-label="Mockup of ad concept B">
+              <div class="ad-top"><span class="ad-av">s</span><div><b>sunday</b><small>Sponsored</small></div></div>
+              <div class="ad-copy"><p>Your guests finished eating. Now they wait for the bill. With sunday, they scan, split and pay in 30 seconds. Trusted by Dishoom, Caravan and JKS.</p></div>
+              <div class="ad-visual v2">
+                <span class="small">Card 1 of 5 · Carousel 1:1</span>
+                <span class="big">12 minutes <em>saved on every table.</em></span>
+                <span class="small">→ Scan · Split · Tip · Review · Done</span>
+              </div>
+              <div class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+              <div class="ad-foot"><div><small>sundayapp.com</small><b>Turn tables faster without hiring</b></div><span class="ad-cta">Book now</span></div>
+            </div>
+            <dl class="spec">
+              <dt>Format</dt><dd>5-card carousel, 1:1. One benefit per card, each with a real number.</dd>
+              <dt>Visual</dt><dd>1: "12 minutes saved per table". 2: phone showing scan and split. 3: "+12% average check". 4: "5x more Google reviews". 5: UK client logos and "Book a 20-min demo".</dd>
+              <dt>Headline</dt><dd>Turn tables faster without hiring.</dd>
+              <dt>Description</dt><dd>Works with your POS. Live in days.</dd>
+              <dt>CTA</dt><dd>Book now, same instant form as A.</dd>
+              <dt>Why it converts</dt><dd>Owners and ops directors buy ROI. A carousel lets each card answer one question a buyer has, and the logo card solves the trust gap of a brand still unknown in the UK. It also pre-qualifies: people who swipe to card 5 are reading, not just scrolling.</dd>
+            </dl>
+          </div>
+        </div>
+
+        <h3>Test design</h3>
+        <dl class="spec">
+          <dt>Budget</dt><dd>£3,000 over 4 weeks, split 50/50 in two ad sets (A/B test in Ads Manager to avoid audience overlap).</dd>
+          <dt>Audience</dt><dd>UK, 25-60, Advantage+ audience seeded with a lookalike of current UK and FR clients plus interests in restaurant management and hospitality. Exclude existing clients and staff.</dd>
+          <dt>Optimisation</dt><dd>Leads, with "meeting booked" sent back from the CRM through the Conversions API so Meta learns from quality, not form fills.</dd>
+          <dt>Success bar</dt><dd>CPL under £90 (vs £144 today) and a demo to meeting rate of 30% or more. With £1,500 per arm, that means at least 17 leads per arm to call a winner, so the read is directional and should be confirmed in a second round.</dd>
+        </dl>
+      </section>
+
+      <!-- PART 2 TASK 2 -->
+      <section id="data">
+        <p class="part-label">Part 2 · Task 2 · Growth analysis</p>
+        <h2>Reading six weeks of paid data</h2>
+        <div class="note assume">
+          <span class="eyebrow">Assumptions</span>
+          <ul>
+            <li>"Clicks / leads" means clicks for Meta and LinkedIn (it matches impressions × CTR) and clicks for Google too, since Google shows no impressions.</li>
+            <li>"CPL" in the table is cost per demo request (spend ÷ demos). I call it cost per demo below.</li>
+            <li>A meeting booked is the real sales outcome. I compute cost per meeting = spend ÷ (demos × meeting rate).</li>
+            <li>No exchange rate conversion: FR is in €, UK in £. Comparisons are within each country, or in ratios.</li>
+          </ul>
+        </div>
+
+        <div class="tbl"><table>
+          <thead><tr><th>Derived metric</th><th class="n">FR Meta</th><th class="n">FR LinkedIn</th><th class="n">FR Google</th><th class="n">UK Meta</th><th class="n">UK LinkedIn</th><th class="n">UK Google</th></tr></thead>
+          <tbody>
+            <tr><td>Share of country spend</td><td class="n">49%</td><td class="n">33%</td><td class="n">18%</td><td class="n">48%</td><td class="n">35%</td><td class="n">17%</td></tr>
+            <tr><td>Share of country demos</td><td class="n">35%</td><td class="n">23%</td><td class="n"><span class="best">41%</span></td><td class="n">30%</td><td class="n">23%</td><td class="n"><span class="best">47%</span></td></tr>
+            <tr><td>Cost per click</td><td class="n">€2.28</td><td class="n">€13.33</td><td class="n">€3.95</td><td class="n">£2.83</td><td class="n">£19.39</td><td class="n">£4.74</td></tr>
+            <tr><td>Click → demo rate</td><td class="n">3.4%</td><td class="n">19.5%</td><td class="n">18.9%</td><td class="n">2.0%</td><td class="n">14.3%</td><td class="n">14.7%</td></tr>
+            <tr><td>Cost per demo</td><td class="n">€67.7</td><td class="n">€68.3</td><td class="n"><span class="best">€20.8</span></td><td class="n">£144.4</td><td class="n">£135.7</td><td class="n"><span class="best">£32.1</span></td></tr>
+            <tr><td>Meetings booked</td><td class="n">21.1</td><td class="n">15.6</td><td class="n">29.5</td><td class="n">5.0</td><td class="n">4.3</td><td class="n">10.9</td></tr>
+            <tr><td>Cost per meeting</td><td class="n">€199</td><td class="n">€180</td><td class="n"><span class="best">€51</span></td><td class="n">£516</td><td class="n">£438</td><td class="n"><span class="best">£82</span></td></tr>
+          </tbody>
+        </table></div>
+
+        <div class="chart" id="cpm-chart">
+          <h4>Cost per meeting booked</h4>
+          <p class="sub">Spend ÷ (demo requests × demo-to-meeting rate). France in €, UK in £.</p>
+          <div class="bars" role="img" aria-label="Cost per meeting booked: FR Meta 199 euros, FR LinkedIn 180, FR Google 51, UK Meta 516 pounds, UK LinkedIn 438, UK Google 82.">
+            <div class="bar-row"><span class="lbl">FR · Meta</span><div class="bar-track"><div class="bar" style="width:33.2%" data-tip="FR Meta: €4,200 ÷ 21.1 meetings = €199"><span class="bar-val">€199</span></div></div></div>
+            <div class="bar-row"><span class="lbl">FR · LinkedIn</span><div class="bar-track"><div class="bar" style="width:30%" data-tip="FR LinkedIn: €2,800 ÷ 15.6 meetings = €180"><span class="bar-val">€180</span></div></div></div>
+            <div class="bar-row"><span class="lbl">FR · Google</span><div class="bar-track"><div class="bar good" style="width:8.5%" data-tip="FR Google: €1,500 ÷ 29.5 meetings = €51"><span class="bar-val">€51</span></div></div></div>
+            <div class="bar-row gap"><span class="lbl">UK · Meta</span><div class="bar-track"><div class="bar" style="width:86%" data-tip="UK Meta: £2,600 ÷ 5.0 meetings = £516"><span class="bar-val">£516</span></div></div></div>
+            <div class="bar-row"><span class="lbl">UK · LinkedIn</span><div class="bar-track"><div class="bar" style="width:73%" data-tip="UK LinkedIn: £1,900 ÷ 4.3 meetings = £438"><span class="bar-val">£438</span></div></div></div>
+            <div class="bar-row"><span class="lbl">UK · Google</span><div class="bar-track"><div class="bar good" style="width:13.7%" data-tip="UK Google: £900 ÷ 10.9 meetings = £82"><span class="bar-val">£82</span></div></div></div>
+          </div>
+        </div>
+
+        <h3>Three observations</h3>
+        <ol class="obs">
+          <li><b class="t"><span class="badge b-work">Working</span>Google Search is 4 to 6 times more efficient and gets the smallest budget</b>
+            <p>A meeting costs €51 on Google in France against €180-199 elsewhere, and £82 in the UK against £438-516. Google also has the best demo-to-meeting rate in both countries (41% and 39%): people who search are already looking for a solution. Yet it gets about 17% of spend while producing 41-47% of demos.</p>
+            <p>The missing impression data hides one thing we need to know: whether Google is limited by budget or by search volume.</p></li>
+          <li><b class="t"><span class="badge b-fail">Not working</span>UK Meta loses people after the click</b>
+            <p>UK Meta's CTR (0.46%) is only 22% below France (0.59%) and its cost per click is similar. The gap opens after the click: 2.0% of clicks become a demo in the UK against 3.4% in France, 42% lower. The ad does its job, the landing experience does not. Likely causes: a page built for France, few UK logos, prices or proof not localised, or a long form.</p>
+            <p>Video view rate is also lower (24% vs 31%), which points to creatives that feel less relevant to UK operators. Result: £516 per meeting, the worst figure of the table.</p></li>
+          <li><b class="t"><span class="badge b-surp">Surprising</span>LinkedIn's weak CTR hides the most qualified traffic</b>
+            <p>LinkedIn has the lowest CTR (0.24% FR, 0.18% UK) and the most expensive clicks (€13 and £19). But 19.5% of its French clicks become a demo, the best rate in the table, and its meeting rate (38%) beats Meta. In France its cost per demo ends up equal to Meta (€68.3 vs €67.7). Judging LinkedIn on CTR would kill a channel that brings decision makers.</p>
+            <p>A caveat on the whole table: it stops at "meeting booked". Without deal and revenue data we cannot tell whether LinkedIn's meetings close better, which is plausible for groups and chains.</p></li>
+        </ol>
+      </section>
+
+      <section id="recos">
+        <p class="part-label">Part 2 · Task 2 · Recommendations</p>
+        <h2>Three changes for next week</h2>
+
+        <div class="reco"><span class="rank">1</span><div>
+          <h4>Move budget from Meta to Google Search, in steps</h4>
+          <dl class="spec">
+            <dt>What</dt><dd>Shift 30% of Meta spend to Google in each country: about €1,260 in France and £780 in the UK over the next 6 weeks. Move it in two steps and check impression share after the first one.</dd>
+            <dt>Why</dt><dd>Google produces meetings 4-6 times cheaper. Even if extra budget buys more expensive searches, it stays far below Meta.</dd>
+            <dt>Outcome</dt><dd>Assuming the extra Google budget converts 50% worse than today (€31 and £48 per demo), France gains about 40 demos and loses about 19 on Meta: <b>+21 demos, around +10 meetings</b>. The UK gains about 16 demos and loses about 5: <b>+11 demos, around +5 meetings</b>, a 24% lift on the UK's 20 meetings. If impression share is already above 80%, stop and expand keywords (competitor names, "pay at table", "split the bill app") instead.</dd>
+          </dl>
+        </div></div>
+
+        <div class="reco"><span class="rank">2</span><div>
+          <h4>Fix the UK post-click journey before scaling UK Meta</h4>
+          <dl class="spec">
+            <dt>What</dt><dd>Build a UK landing page (UK logos, £, UK POS integrations, tips law angle) and test it against Meta instant forms with 3 qualifying questions. Swap in the UK creatives from Task 1.</dd>
+            <dt>Why</dt><dd>The drop happens after the click. More budget on the same page buys more lost clicks.</dd>
+            <dt>Outcome</dt><dd>Bringing click-to-demo from 2.0% to France's 3.4% on the same traffic would take UK Meta from 18 to about 31 demos and from £144 to about £85 per demo. That is the target for a 4-week test.</dd>
+          </dl>
+        </div></div>
+
+        <div class="reco"><span class="rank">3</span><div>
+          <h4>Optimise and report on meetings, and give Meta a new job</h4>
+          <dl class="spec">
+            <dt>What</dt><dd>Send "meeting booked" and "deal won" back to Meta, LinkedIn and Google as offline conversions, and make cost per meeting the weekly KPI. Use Meta mostly to build audiences (the client videos) and retarget 50% viewers with the case studies and LinkedIn ads.</dd>
+            <dt>Why</dt><dd>Each platform optimises for what it is fed. Meta is cheap for reach (CPM about €13) but weak at direct demos. Its video viewers are a warm pool that search and LinkedIn can close.</dd>
+            <dt>Outcome</dt><dd>A clearer budget decision every week. I would set a target of 10-20% lower cost per meeting on Meta once the algorithm learns from meetings instead of form fills, to be validated after 4 weeks. Track the lift through retargeting conversions and branded search volume.</dd>
+          </dl>
+        </div></div>
+      </section>
+
+      <!-- BONUS -->
+      <section id="bonus">
+        <p class="part-label">Bonus</p>
+        <h2>Measuring organic, awareness-first campaigns</h2>
+        <p>Awareness works if more of the right people know sunday, remember it and come looking for it. Three metrics, from reach to intent:</p>
+        <div class="grid2">
+          <div class="card"><h4>1. Engaged reach in the target audience</h4>
+            <p>Unique restaurant decision makers who watched at least 50% of a video or interacted with a post, using LinkedIn's follower and visitor demographics (job function, industry) and Instagram's 3-second views.</p>
+            <p><b>Why:</b> raw impressions count the wrong people. Engaged reach inside the ICP tells whether the content lands with buyers.</p></div>
+          <div class="card"><h4>2. Branded search volume</h4>
+            <p>Searches for "sunday app", "sunday paiement", "sunday restaurant" in Google Search Console and Google Trends, per country, compared with the pre-campaign baseline.</p>
+            <p><b>Why:</b> it is the cleanest signal that awareness turns into intent. In the UK, where sunday is new, it is the North Star for organic.</p></div>
+          <div class="card"><h4>3. Self-reported attribution</h4>
+            <p>A required "How did you hear about us?" field in the demo form, with options such as LinkedIn post, Instagram, a client, press, event.</p>
+            <p><b>Why:</b> dark social (a video shared in a WhatsApp group of restaurateurs) never shows up in analytics. Asking is the only way to see it.</p></div>
+        </div>
+        <p>Read them monthly and against a baseline, because awareness moves slowly and weekly swings are noise.</p>
+      </section>
+
+      <section id="sources">
+        <h2>Sources</h2>
+        <ul class="sources">
+          <li>sunday UK homepage, product claims and UK clients: <a href="https://sundayapp.com/en-gb/" target="_blank" rel="noopener">sundayapp.com/en-gb</a></li>
+          <li>sunday customer story used as editorial template: <a href="https://sundayapp.com/fr/cafe-a-la-solution-la-plus-facile-a-mes-yeux-et-a-ce-jour-reste-sunday/" target="_blank" rel="noopener">Café A</a></li>
+          <li>me&amp;u: <a href="https://www.meandu.com/" target="_blank" rel="noopener">meandu.com</a></li>
+          <li>OrderPay: <a href="https://orderpay.com/" target="_blank" rel="noopener">orderpay.com</a></li>
+          <li>Dojo pricing and features: <a href="https://www.expertsure.com/uk/merchant-accounts/dojo-review/" target="_blank" rel="noopener">ExpertSure Dojo review 2026</a></li>
+          <li>UK order and pay landscape: <a href="https://restauranttech.co.uk/guides/best-qr-code-ordering-order-and-pay-systems-uk-2026" target="_blank" rel="noopener">RestaurantTech UK, 2026 guide</a></li>
+          <li>Client videos: PNY x sunday (3 films) and Kozy x sunday, provided with the case study</li>
+        </ul>
+      </section>
+
+      <footer>Hussein Yattar · <a href="https://hyattar.github.io" target="_blank" rel="noopener">hyattar.github.io</a> · Case study for sunday, September 2026</footer>
+    </main>
+  </div>
+</div>
+<div class="tip" id="tip" hidden></div>
+<script>
+(function(){
+  var tip=document.getElementById('tip');
+  document.querySelectorAll('.bar[data-tip]').forEach(function(b){
+    b.addEventListener('mousemove',function(e){tip.textContent=b.getAttribute('data-tip');tip.hidden=false;tip.style.left=(e.clientX+12)+'px';tip.style.top=(e.clientY-36)+'px';});
+    b.addEventListener('mouseleave',function(){tip.hidden=true;});
+  });
+})();
+</script>
+</body>
+</html>
